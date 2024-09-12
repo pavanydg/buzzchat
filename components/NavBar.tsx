@@ -10,7 +10,8 @@ export const NavBar = () => {
         <button onClick={() => {
             signOut()
         }}>Logout</button>
-
+        <div></div>
+        {/* {JSON.stringify(session.data?.user.id)}<br></br> */}
         {JSON.stringify(session)}
     </div>
 }

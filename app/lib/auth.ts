@@ -1,10 +1,16 @@
 import CredentialsProvider from "next-auth/providers/credentials";
 import GoogleProvider from "next-auth/providers/google";
 import { prismaClient } from "./db";
+import { DefaultSession } from "next-auth";
 
 declare module "next-auth" {
   interface User {
     id: number;
+  }
+  interface Session{
+    user: {
+      id: number;
+    } & DefaultSession["user"]
   }
 }
 
@@ -41,14 +47,16 @@ export const NEXT_AUTH = {
   ],
   secret: process.env.NEXTAUTH_SECRET,
   callbacks: {
-    async jwt({ token, user }: any) {
+    jwt: ({ token, user }: any) => {
       if (user) {
         token.id = user.id;
       }
       return token;
     },
-    async session({ session, token }: any) {
-      session.user.id = token.id;
+    session: ({ session, token }: any) => {
+      if (session.user) {
+        session.user.id = token.id;
+      }
       return session;
     },
   },

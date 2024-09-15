@@ -1,7 +1,4 @@
 import { prismaClient } from "@/app/lib/db";
-import { NextApiRequest, NextApiResponse } from "next";
-import { getServerSession } from "next-auth";
-import { getSession } from "next-auth/react";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function GET(req: NextRequest, {params}: {params: {chatId: string}}){

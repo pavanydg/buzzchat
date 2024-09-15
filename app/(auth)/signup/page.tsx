@@ -62,8 +62,6 @@ export default function SignUp() {
     const password = formData.get('password') as string
 
 
-    // Here you would typically send the data to your backend
-    console.log('Signing up with:', name, email, password)
 
     // Simulate API call
 

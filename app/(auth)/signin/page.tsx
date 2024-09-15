@@ -57,8 +57,6 @@ export default function SignIn() {
     const email = formData.get('email') as string
     const password = formData.get('password') as string
 
-    // Here you would typically send the data to your backend for authentication
-    console.log('Signing in with:', email, password)
     try {
       const res = await signIn("credentials", {
         email: email,

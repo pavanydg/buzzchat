@@ -7,7 +7,7 @@ export async function GET(){
     const session = await getServerSession(NEXT_AUTH);
 
     const loggedUserId = session.user.id;
-
+    
     const chats = await prismaClient.chat.findMany({
         where: {
             participants: {

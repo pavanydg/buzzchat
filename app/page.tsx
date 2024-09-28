@@ -5,8 +5,6 @@ import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { MessageCircle, Users, Zap, Lock, Menu, X, Moon, Sun } from "lucide-react"
 import { motion } from "framer-motion"
-import { div } from 'framer-motion/client'
-import { BackgroundBeamsWithCollision } from '@/components/ui/background-beams-with-collision'
 
 export default function Component() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)

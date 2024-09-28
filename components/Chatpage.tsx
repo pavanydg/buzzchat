@@ -93,7 +93,7 @@ export default function ChatPage() {
 
         <Chats chats={chats} selectedChat={selectedChat} onChatSelect={handleChatSelect} />
       </div>
-
+      
       <div className="flex-1 flex flex-col">
         <Messages
           selectedChat={selectedChat}

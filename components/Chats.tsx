@@ -14,6 +14,11 @@ interface ChatsProps {
 export default function Chats({ chats, selectedChat, onChatSelect }: ChatsProps) {
     return (
       <ScrollArea className="">
+        {chats.length == 0 && (
+          <div className="flex justify-center">
+            No conversations found
+          </div>
+        )}
         {chats.map((chat) => (
           <div
             key={chat.id}
